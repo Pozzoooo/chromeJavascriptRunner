@@ -2,7 +2,7 @@
   "name": "Javascript Automator",
   "version": "1.0",
   "description": "Javscript magic button",
-  "permissions": ["storage", "declarativeContent", "activeTab"],
+  "permissions": ["storage", "declarativeContent", "activeTab", "tabs"],
   "options_page": "options.html",
   "background": {
       "scripts": ["background.js"],
