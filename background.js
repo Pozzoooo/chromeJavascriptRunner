@@ -1,16 +1,20 @@
-'use strict';
 
-chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.sync.set({color: '#3aa757'}, function() {
-    console.log("The color is green.");
-  });
-    chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-      chrome.declarativeContent.onPageChanged.addRules([{
-        conditions: [new chrome.declarativeContent.PageStateMatcher({
-          pageUrl: {hostEquals: 'www.jango.com'},
-        })],
-        actions: [new chrome.declarativeContent.ShowPageAction()]
-      }]);
-    });
+chrome.browserAction.onClicked.addListener(function(tab) {
+	findAndPlayJango();
 });
 
+function playJango() {
+	return "document.getElementById('player_pp_icon').click()"
+}
+
+function findAndPlayJango() {
+	chrome.tabs.query({}, function(tabs) {
+		for (var i=0; i<tabs.length; ++i) {
+			if (tabs[i].url.includes("jango")) {
+				chrome.tabs.executeScript(
+					tabs[i].id,
+					{code: playJango()});
+			}
+		}
+	} );
+}
