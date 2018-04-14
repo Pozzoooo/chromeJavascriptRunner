@@ -7,6 +7,11 @@ function playJango() {
 	return "document.getElementById('player_pp_icon').click()"
 }
 
+chrome.commands.onCommand.addListener(function(command) {
+	findAndPlayJango();
+	alert("La" + cammand);
+});
+
 function findAndPlayJango() {
 	chrome.tabs.query({}, function(tabs) {
 		for (var i=0; i<tabs.length; ++i) {
@@ -18,3 +23,4 @@ function findAndPlayJango() {
 		}
 	} );
 }
+
