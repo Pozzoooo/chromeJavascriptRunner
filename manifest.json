@@ -22,6 +22,24 @@
         "default": "Ctrl+Down"
       },
       "description": "Play/Pause"
+    },
+    "playPause2": {
+     "suggested_key": {
+	"default": "MediaPlayPause"
+      },
+      "description": "Play/Pause too"
+    },
+    "next": {
+      "suggested_key": {
+	"default": "Ctrl+Right"
+      },
+      "description": "Next"
+    },
+    "next2": {
+      "suggested_key": {
+	"default": "MediaNextTrack"
+      },
+      "description": "Next too"
     }
   },
   "manifest_version": 2
